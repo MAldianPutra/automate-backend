@@ -237,6 +237,31 @@ paths:
           description: "Prediction result deleted successfully"
         404:
           description: "Prediction result not found"
+  /garage:
+    get:
+      summary: "Fetch garage information"
+      description: "Retrieves detailed information about a nearby garage, including name, distance, and address."
+      responses:
+        200:
+          description: "Successful response with garage data"
+          schema:
+            type: "object"
+            properties:
+              name:
+                type: "string"
+                description: "The name of the garage"
+              distance_km:
+                type: "number"
+                format: "float"
+                description: "Distance to the garage in kilometers"
+              address:
+                type: "string"
+                description: "The address of the garage"
+        404:
+          description: "Garage data not found"
+        500:
+          description: "Error processing garage data"
+
 
 definitions:
   Car:
