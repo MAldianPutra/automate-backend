@@ -1,0 +1,77 @@
+[
+  {
+      "name": "AutoCare Garage",
+      "distance_km": 0.5,
+      "address": "123 Jalan Tun Razak, 50400 Kuala Lumpur"
+  },
+  {
+      "name": "City Motors Workshop",
+      "distance_km": 1.2,
+      "address": "456 Jalan Ampang, 50450 Kuala Lumpur"
+  },
+  {
+      "name": "Kuala Lumpur Auto Services",
+      "distance_km": 2.0,
+      "address": "789 Jalan Sultan Ismail, 50250 Kuala Lumpur"
+  },
+  {
+      "name": "SpeedyFix Auto",
+      "distance_km": 2.8,
+      "address": "321 Jalan Bukit Bintang, 55100 Kuala Lumpur"
+  },
+  {
+      "name": "ProTech Car Services",
+      "distance_km": 3.5,
+      "address": "654 Jalan Imbi, 55100 Kuala Lumpur"
+  },
+  {
+      "name": "Mega Motors Workshop",
+      "distance_km": 4.0,
+      "address": "987 Jalan Pudu, 55100 Kuala Lumpur"
+  },
+  {
+      "name": "QuickFix Garage",
+      "distance_km": 4.8,
+      "address": "135 Jalan Raja Chulan, 50200 Kuala Lumpur"
+  },
+  {
+      "name": "AutoHub Services",
+      "distance_km": 5.5,
+      "address": "246 Jalan Tun Sambanthan, 50470 Kuala Lumpur"
+  },
+  {
+      "name": "TopGear Auto Repair",
+      "distance_km": 6.0,
+      "address": "369 Jalan Sentul, 51000 Kuala Lumpur"
+  },
+  {
+      "name": "City Wheels Garage",
+      "distance_km": 6.8,
+      "address": "159 Jalan Klang Lama, 58000 Kuala Lumpur"
+  },
+  {
+      "name": "Prime Auto Solutions",
+      "distance_km": 7.5,
+      "address": "753 Jalan Kuching, 51200 Kuala Lumpur"
+  },
+  {
+      "name": "Elite Car Services",
+      "distance_km": 8.2,
+      "address": "486 Jalan Cheras, 56100 Kuala Lumpur"
+  },
+  {
+      "name": "Precision Auto Workshop",
+      "distance_km": 9.0,
+      "address": "258 Jalan Ipoh, 51200 Kuala Lumpur"
+  },
+  {
+      "name": "Ultimate Auto Care",
+      "distance_km": 9.8,
+      "address": "147 Jalan Duta, 50480 Kuala Lumpur"
+  },
+  {
+      "name": "RapidFix Auto Garage",
+      "distance_km": 10.5,
+      "address": "369 Jalan Bangsar, 59000 Kuala Lumpur"
+  }
+]

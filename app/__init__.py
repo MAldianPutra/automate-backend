@@ -20,7 +20,7 @@ def create_app():
     swagger = Swagger(app, template_file=swagger_file_path)
 
     # Enable CORS for all routes
-    CORS(app)  
+    CORS(app)
 
     # Set up logging
     logging.basicConfig(level=logging.INFO)
