@@ -19,7 +19,9 @@ def create_app():
     logger.info("Application setup started")
 
     with app.app_context():
-        from . import routes, models
+        from . import models
+        from .routes import register_blueprints
+        register_blueprints(app)
         db.create_all()
 
     # Register error handlers

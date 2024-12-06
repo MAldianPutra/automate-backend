@@ -1,5 +1,6 @@
 from . import db
 from datetime import datetime, timezone
+from flask_sqlalchemy import SQLAlchemy
 
 class TimestampMixin:
     created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
