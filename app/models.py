@@ -30,7 +30,7 @@ class RawData(db.Model, TimestampMixin):
     catalyst_temperature_bank1_sensor2 = db.Column(db.Float)
     control_module_voltage = db.Column(db.Float)
 
-    car = db.relationship('Car', backref=db.backref('predictions', lazy=True))
+    car = db.relationship('Car', backref=db.backref('raw_data', lazy=True))
 
 class PredictionResult(db.Model, TimestampMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -39,7 +39,7 @@ class PredictionResult(db.Model, TimestampMixin):
     brakes_score = db.Column(db.Float)
     oil_score = db.Column(db.Float)
 
-    car = db.relationship('Car', backref=db.backref('predictions', lazy=True))
+    car = db.relationship('Car', backref=db.backref('prediction_results', lazy=True))
 
 
 # Add more models as needed
