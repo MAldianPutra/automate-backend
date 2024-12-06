@@ -1,7 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
+from flasgger import Swagger
 import logging
+import os
 
 db = SQLAlchemy()
 
@@ -11,7 +13,14 @@ def create_app():
 
     # Initialize extensions
     db.init_app(app)
-    CORS(app)  # Enable CORS for all routes
+
+    # Initialize Swagger
+    root_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    swagger_file_path = os.path.join(root_directory, 'swagger.yml')
+    swagger = Swagger(app, template_file=swagger_file_path)
+
+    # Enable CORS for all routes
+    CORS(app)  
 
     # Set up logging
     logging.basicConfig(level=logging.INFO)

@@ -1,0 +1,317 @@
+swagger: "2.0"
+info:
+  title: "Automate API"
+  description: "API for managing cars, raw data, and prediction results"
+  version: "1.0.0"
+host: "localhost:5000"
+basePath: "/api"
+schemes:
+  - "http"
+paths:
+  /cars:
+    post:
+      summary: "Create a new car"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              model_name:
+                type: "string"
+              plate_number:
+                type: "string"
+              chassis_number:
+                type: "string"
+      responses:
+        201:
+          description: "Car created successfully"
+        400:
+          description: "Invalid input"
+
+    get:
+      summary: "Retrieve all cars"
+      responses:
+        200:
+          description: "A list of cars"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Car"
+
+  /cars/{car_id}:
+    get:
+      summary: "Get a car by ID"
+      parameters:
+        - name: "car_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "A car object"
+          schema:
+            $ref: "#/definitions/Car"
+        404:
+          description: "Car not found"
+
+    put:
+      summary: "Update a car by ID"
+      parameters:
+        - name: "car_id"
+          in: "path"
+          required: true
+          type: "integer"
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            type: "object"
+            properties:
+              model_name:
+                type: "string"
+              plate_number:
+                type: "string"
+              chassis_number:
+                type: "string"
+      responses:
+        200:
+          description: "Car updated successfully"
+        404:
+          description: "Car not found"
+
+    delete:
+      summary: "Delete a car by ID"
+      parameters:
+        - name: "car_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "Car deleted successfully"
+        404:
+          description: "Car not found"
+
+  /rawdata:
+    post:
+      summary: "Create new raw data"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/RawData"
+      responses:
+        201:
+          description: "Raw data created successfully"
+        400:
+          description: "Invalid input"
+
+    get:
+      summary: "Retrieve all raw data entries"
+      responses:
+        200:
+          description: "A list of raw data entries"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/RawData"
+
+  /rawdata/{raw_data_id}:
+    get:
+      summary: "Get raw data by ID"
+      parameters:
+        - name: "raw_data_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "A raw data object"
+          schema:
+            $ref: "#/definitions/RawData"
+        404:
+          description: "Raw data not found"
+
+    put:
+      summary: "Update raw data by ID"
+      parameters:
+        - name: "raw_data_id"
+          in: "path"
+          required: true
+          type: "integer"
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/RawData"
+      responses:
+        200:
+          description: "Raw data updated successfully"
+        404:
+          description: "Raw data not found"
+
+    delete:
+      summary: "Delete raw data by ID"
+      parameters:
+        - name: "raw_data_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "Raw data deleted successfully"
+        404:
+          description: "Raw data not found"
+
+  /predictionresults:
+    post:
+      summary: "Create a new prediction result"
+      parameters:
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/PredictionResult"
+      responses:
+        201:
+          description: "Prediction result created successfully"
+        400:
+          description: "Invalid input"
+
+    get:
+      summary: "Retrieve all prediction results"
+      responses:
+        200:
+          description: "A list of prediction results"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/PredictionResult"
+
+  /predictionresults/{prediction_result_id}:
+    get:
+      summary: "Get a prediction result by ID"
+      parameters:
+        - name: "prediction_result_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "A prediction result object"
+          schema:
+            $ref: "#/definitions/PredictionResult"
+        404:
+          description: "Prediction result not found"
+
+    put:
+      summary: "Update a prediction result by ID"
+      parameters:
+        - name: "prediction_result_id"
+          in: "path"
+          required: true
+          type: "integer"
+        - in: "body"
+          name: "body"
+          required: true
+          schema:
+            $ref: "#/definitions/PredictionResult"
+      responses:
+        200:
+          description: "Prediction result updated successfully"
+        404:
+          description: "Prediction result not found"
+
+    delete:
+      summary: "Delete a prediction result by ID"
+      parameters:
+        - name: "prediction_result_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "Prediction result deleted successfully"
+        404:
+          description: "Prediction result not found"
+
+definitions:
+  Car:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      model_name:
+        type: "string"
+      plate_number:
+        type: "string"
+      chassis_number:
+        type: "string"
+
+  RawData:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      engine_rpm:
+        type: "number"
+        format: "float"
+      throttle:
+        type: "number"
+        format: "float"
+      engine_load:
+        type: "number"
+        format: "float"
+      coolant_temperature:
+        type: "number"
+        format: "float"
+      long_term_fuel_trim_bank_1:
+        type: "number"
+        format: "float"
+      short_term_fuel_trim_bank_1:
+        type: "number"
+        format: "float"
+      intake_manifold_pressure:
+        type: "number"
+        format: "float"
+      commanded_throttle_actuator:
+        type: "number"
+        format: "float"
+      fuel_air_commanded_equiv_ratio:
+        type: "number"
+        format: "float"
+      intake_air_temp:
+        type: "number"
+        format: "float"
+      timing_advance:
+        type: "number"
+        format: "float"
+      catalyst_temperature_bank1_sensor1:
+        type: "number"
+        format: "float"
+      catalyst_temperature_bank1_sensor2:
+        type: "number"
+        format: "float"
+      control_module_voltage:
+        type: "number"
+        format: "float"
+
+  PredictionResult:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      car_id:
+        type: "integer"
+      engine_score:
+        type: "number"
+        format: "float"
+      brakes_score:
+        type: "number"
+        format: "float"
+      oil_score:
+        type: "number"
+        format: "float"
