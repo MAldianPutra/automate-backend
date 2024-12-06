@@ -35,11 +35,9 @@ class RawData(db.Model, TimestampMixin):
 class PredictionResult(db.Model, TimestampMixin):
     id = db.Column(db.Integer, primary_key=True)
     car_id = db.Column(db.Integer, db.ForeignKey('car.id'), nullable=False)
+    ## Temporary
     engine_score = db.Column(db.Float)
     brakes_score = db.Column(db.Float)
     oil_score = db.Column(db.Float)
 
     car = db.relationship('Car', backref=db.backref('prediction_results', lazy=True))
-
-
-# Add more models as needed
