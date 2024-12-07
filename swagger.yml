@@ -267,8 +267,7 @@ paths:
       summary: "Use this endpoint to predict based on car data. Provide the car_id parameter"
       parameters:
           name: "car_id"
-          in: "path"
-          required: true
+          in: "query"
           type: "integer"
       responses:
         200:
