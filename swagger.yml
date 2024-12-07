@@ -284,6 +284,9 @@ definitions:
       engine_rpm:
         type: "number"
         format: "float"
+      vehicle_speed:
+        type: "number"
+        format: "float"      
       throttle:
         type: "number"
         format: "float"
@@ -302,27 +305,22 @@ definitions:
       intake_manifold_pressure:
         type: "number"
         format: "float"
-      commanded_throttle_actuator:
+      control_module_voltage:
         type: "number"
         format: "float"
       fuel_air_commanded_equiv_ratio:
         type: "number"
         format: "float"
-      intake_air_temp:
-        type: "number"
-        format: "float"
-      timing_advance:
-        type: "number"
-        format: "float"
       catalyst_temperature_bank1_sensor1:
         type: "number"
         format: "float"
-      catalyst_temperature_bank1_sensor2:
+      moving:
         type: "number"
         format: "float"
-      control_module_voltage:
-        type: "number"
-        format: "float"
+      date_of_compute:
+        type: "integer"
+      date_of_garage:
+        type: "integer"
 
   PredictionResult:
     type: "object"
@@ -331,12 +329,5 @@ definitions:
         type: "integer"
       car_id:
         type: "integer"
-      engine_score:
-        type: "number"
-        format: "float"
-      brakes_score:
-        type: "number"
-        format: "float"
-      oil_score:
-        type: "number"
-        format: "float"
+      result:
+        type: "integer"
