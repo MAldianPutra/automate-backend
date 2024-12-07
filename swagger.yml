@@ -261,6 +261,22 @@ paths:
           description: "Garage data not found"
         500:
           description: "Error processing garage data"
+  paths:
+  /predict:
+    get:
+      summary: "Use this endpoint to predict based on car data. Provide the car_id parameter"
+      parameters:
+          name: "car_id"
+          in: "path"
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "A car object"
+          schema:
+            $ref: "#/definitions/Car"
+        404:
+          description: "Car not found"
 
 
 definitions:
